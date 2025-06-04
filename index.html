@@ -6,172 +6,148 @@
   <meta name="description" content="Rata Saviya Foundation, founded by foreign employees in UAE, supports the education of Sri Lanka’s school children. Donate to empower future generations." />
   <title>Rata Saviya Foundation</title>
   <style>
-    body {
-      font-family: Arial, "Noto Sans Sinhala", "Iskoola Pota", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f8fa;
-      color: #333;
-    }
-    header {
-      background: #005f73;
-      color: white;
-      padding: 20px 40px;
-      position: relative;
-    }
-    header img {
-      position: absolute;
-      top: 20px;
-      left: 40px;
-      height: 100px;
-    }
-    header h1, header p {
-      text-align: center;
-      margin: 0;
-    }
+    {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    header h1 {
-      font-size: 2em;
-    }
+/* Fonts */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
 
-    header p {
-      margin-top: 10px;
-      font-size: 1em;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #0a9396;
-      padding: 10px 0;
-    }
-    nav a {
-      color: white;
-      margin: 10px 100px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.3rem;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      color: #005f73;
-    }
-    .donation-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-    form {
-      flex: 1 1 300px;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    form label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-    form input[type="text"],
-    form input[type="number"],
-    form input[type="file"] {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    form button {
-      background: #005f73;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 4px;
-      width: 100%;
-    }
-    form button:hover {
-      background: #0a9396;
-    }
-    .payment-details {
-      flex: 1 1 300px;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      line-height: 1.7;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #0a9396;
-      color: white;
-      margin-top: 50px;
-    }
-    .blog-list {
-      list-style: none;
-      padding: 0;
-    }
-    .blog-list li {
-      background: white;
-      margin-bottom: 15px;
-      padding: 15px 20px;
-      border-radius: 6px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.1);
-    }
-    .blog-list li h3 {
-      margin: 0 0 8px 0;
-    }
+/* Header */
+header {
+  background: #f8f8f8;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    #contactPopup {
-      display: none;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 300px;
-      height: 100%;
-      background: white;
-      box-shadow: -2px 0 10px rgba(0,0,0,0.2);
-      padding: 20px;
-      z-index: 9999;
-    }
-    #contactPopup button {
-      margin-top: 30px;
-      background: #005f73;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-@media (max-width: 960px) {
-  .container, #fb-container {
-    width: 100%;
-    padding: 0 15px;
-  }
+header img {
+  max-width: 100px;
+  height: auto;
+}
 
-  nav a {
-    margin: 0 15px;
-    font-size: 0.5cm;
+nav a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 15px;
+  font-size: 1rem;
+}
+
+/* Hero Section */
+.hero {
+  background: url('your-hero-image.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Donation Section */
+.donation-flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.donation-form, .payment-info {
+  flex: 1 1 45%;
+  padding: 20px;
+  border: 1px solid #eee;
+  background: #f9f9f9;
+}
+
+input, button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: white;
+}
+
+/* Contact Popup */
+#contactPopup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: white;
+  padding: 20px;
+  z-index: 999;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  height: auto;
+}
+
+#contactPopup p {
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   header img {
-    position: static;
-    display: block;
-    margin: 0 auto 10px auto;
+    max-width: 80px;
   }
 
-  header h1, header p {
-    text-align: center;
+  nav a {
+    display: block;
+    margin: 10px 0;
   }
+
+  .donation-flex {
+    flex-direction: column;
+  }
+
+  .donation-form, .payment-info {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  #contactPopup {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+}
   </style>
 </head>
 <body>
