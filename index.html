@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Rata Saviya Foundation, founded by foreign employees in UAE, supports the education of Sri Lanka’s school children. Donate to empower future generations." />
+  <title>Rata Saviya Foundation</title>
+  <style>
+    body {
+      font-family: Arial, "Noto Sans Sinhala", "Iskoola Pota", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f8fa;
+      color: #333;
+    }
+    header {
+      background: #005f73;
+      color: white;
+      padding: 20px 40px;
+      position: relative;
+    }
+    header img {
+      position: absolute;
+      top: 20px;
+      left: 40px;
+      height: 100px;
+    }
+    header h1, header p {
+      text-align: center;
+      margin: 0;
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1em;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #0a9396;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 10px 100px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #005f73;
+    }
+    .donation-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    form {
+      flex: 1 1 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      background: #005f73;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 100%;
+    }
+    form button:hover {
+      background: #0a9396;
+    }
+    .payment-details {
+      flex: 1 1 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      line-height: 1.7;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0a9396;
+      color: white;
+      margin-top: 50px;
+    }
+    .blog-list {
+      list-style: none;
+      padding: 0;
+    }
+    .blog-list li {
+      background: white;
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    }
+    .blog-list li h3 {
+      margin: 0 0 8px 0;
+    }
+
+    #contactPopup {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100%;
+      background: white;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      z-index: 9999;
+    }
+    #contactPopup button {
+      margin-top: 30px;
+      background: #005f73;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.jpg" alt="Rata Saviya Logo" />
+  <h1>Rata Saviya Foundation</h1>
+  <p>
+    A foundation built by foreign employees in UAE to empower Sri Lankan school children.<br />
+    <span lang="si" style="font-size: 1.1em;">
+      ශ්‍රී ලංකාවේ පාසල් දරුවන් හට සවියක් වීම සදහා රට විරුවන්ගෙන් ගොඩනැගූ පදනමකි.
+    </span>
+  </p>
+</header>
+
+<nav>
+  <a href="#donate">Donate</a>
+  <a href="blog.html">Blog</a>
+  <a href="javascript:void(0)" onclick="openPopup()">Contact</a>
+</nav>
+
+<!-- Contact Sidebar -->
+<div id="contactPopup">
+  <h2 style="color: #005f73;">Contact Us</h2>
+  <p><strong>WhatsApp:</strong> <a href="https://wa.me/94789566218" target="_blank">+94 789 566218</a></p>
+  <p><strong>Email:</strong> <a href="mailto:ratasaviyafoundation@gmail.com">ratasaviyafoundation@gmail.com</a></p>
+  <p><strong>Address:</strong> Al Shabah, Sharjah, UAE</p>
+  <button onclick="closePopup()">Close</button>
+</div>
+
+<div class="container">
+
+  <!-- Donate Section -->
+  <section id="donate">
+    <h2>Make a Donation</h2>
+    <div class="donation-flex">
+      <!-- Form -->
+      <form id="donationForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="whatsapp">WhatsApp Number</label>
+        <input type="text" id="whatsapp" name="whatsapp" placeholder="+94..." required />
+
+        <label for="amount">Donation Amount (AED / LKR)</label>
+        <input type="number" id="amount" name="amount" required />
+
+        <label for="attachment">Upload Payment Slip</label>
+        <input type="file" id="attachment" name="attachment" accept="image/*,application/pdf" required />
+
+        <button type="submit">Verify Payment</button>
+      </form>
+
+      <!-- Payment Info -->
+      <div class="payment-details">
+        <h3>UAE Account</h3>
+        <p>
+          <strong>Account Name:</strong> Ravishka Nimantha Vilegoda<br />
+          <strong>Account Number:</strong> 0012339110001<br />
+          <strong>IBAN:</strong> AE910410000012339110001<br />
+          <strong>Bank:</strong> Sharjah Islamic Bank<br />
+          <strong>SWIFT:</strong> NBSHAEASXXX<br />
+          <strong>Currency:</strong> AED
+        </p>
+        <h3>Sri Lanka Account</h3>
+        <p>
+          <strong>Account Name:</strong> M D R N Vilegoda<br />
+          <strong>Account Number:</strong> 103552346966<br />
+          <strong>Bank:</strong> Sampath Bank<br />
+          <strong>Branch:</strong> Galle Bazaar
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog">
+    <h2>Latest Blogs</h2>
+    <ul class="blog-list">
+      <li>
+        <h3>Welcome to Rata Saviya Foundation</h3>
+        <p>We are committed to supporting Sri Lanka’s students through education assistance.</p>
+        <p lang="si">අපි ශ්‍රී ලංකාවේ පාසල් දරුවන්ගේ අධ්‍යාපනයට සහාය වීමට කැපවී සිටිමු.</p>
+      </li>
+      <li>
+        <h3>How Your Donation Helps</h3>
+        <p>Every donation directly impacts the education of a child in Sri Lanka.</p>
+        <p lang="si">ඔබේ දායකත්වය ශ්‍රී ලංකාවේ දරුවෙකුගේ අනාගතයට සවියක් වේ.</p>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<footer>
+  &copy; 2025 Rata Saviya Foundation — Supporting Sri Lanka’s Future<br />
+  <span lang="si">ශ්‍රී ලංකාවේ පාසල් දරුවන් හට සවියක් වීම සදහා රට විරුවන්ගෙන් ගොඩනැගුනු පදනමකි.</span>
+</footer>
+
+<!-- JS Scripts -->
+<script>
+  function openPopup() {
+    document.getElementById('contactPopup').style.display = 'block';
+  }
+  function closePopup() {
+    document.getElementById('contactPopup').style.display = 'none';
+  }
+
+  // WhatsApp Form Redirect
+  document.getElementById('donationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const whatsapp = document.getElementById('whatsapp').value;
+    const amount = document.getElementById('amount').value;
+
+    const message = `Donation Verification Request:\n\nName: ${name}\nWhatsApp: ${whatsapp}\nAmount: ${amount} (AED/LKR)\n\nPlease find the attached payment slip.`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/94789566218?text=${encodedMessage}`;
+
+    window.open(whatsappURL, '_blank');
+    alert("Redirecting to WhatsApp... Please attach the payment slip manually.");
+  });
+</script>
+
+</body>
+</html>
