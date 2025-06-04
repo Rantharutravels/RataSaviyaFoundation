@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Rata Saviya Foundation" />
+  <title>Rata Saviya Foundation</title>
+  <style>
+    body {
+      font-family: Arial, "Noto Sans Sinhala", "Iskoola Pota", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f8fa;
+    }
+
+    header {
+      background: #005f73;
+      color: white;
+      padding: 20px 40px;
+      position: relative;
+    }
+
+    header img {
+      position: absolute;
+      top: 20px;
+      left: 40px;
+      height: 90px;
+    }
+
+    header h1, header p {
+      text-align: center;
+      margin: 0;
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1em;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #0a9396;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 150px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.6cm;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* Optional: keep max width for fb container */
+    #fb-container {
+  width: 900px;
+  margin: 0 auto 40px auto;
+}
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0a9396;
+      color: white;
+      margin-top: 50px;
+    }
+@media (max-width: 960px) {
+  .container, #fb-container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  nav a {
+    margin: 0 15px;
+    font-size: 0.5cm;
+  }
+
+  header img {
+    position: static;
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+
+  header h1, header p {
+    text-align: center;
+  }
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.jpg" alt="Logo" />
+  <h1>Rata Saviya Foundation</h1>
+  <p>
+    A foundation built by Foreign employees in UAE to be a strength for school children, the future of Sri Lanka.<br />
+    <span lang="si" style="font-size: 1.1em;">
+      ශ්‍රී ලංකාවේ අනාගතය වූ පාසල් දරු දරුවන් හට සවියක් වීම සදහා රට විරුවන් වෙතින් ගොඩනැගුන පදනමකි
+    </span>
+  </p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="index.html">Donate</a>
+</nav>
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"
+  nonce="yourNonceValue">
+</script>
+
+<main class="container">
+
+  <!-- Responsive Facebook Page Plugin Container -->
+  <div id="fb-container">
+    <!-- Facebook plugin will be injected here by JS -->
+  </div>
+
+  <section id="blog">
+    <h2 style="color: navy;">Visit Our FB Page for Latest Blogs</h2>
+    <!-- blogs content -->
+  </section>
+
+  <section id="blog-latest">
+    <h2>Latest Blogs</h2>
+    <ul class="blog-list">
+      <li>
+        <h3>Welcome to Rata Saviya Foundation</h3>
+        <p>We are dedicated to empowering Sri Lanka's school children through support to education.</p>
+        <p lang="si" style="font-size: 1em; line-height: 1.5; margin-top: 8px;">
+          අධ්‍යාපනයට සහාය දීම තුළින් ශ්‍රී ලංකාවේ පාසල් දරුවන් සවිබල ගැන්වීමට අපි කැපවී සිටිමු.
+        </p>
+      </li>
+      <li>
+        <h3>How Your Donation Helps</h3>
+        <p>The small contribution you make today will be a great contribution to the future of Sri Lanka tomorrow.</p>
+        <p lang="si" style="font-size: 1em; line-height: 1.5; margin-top: 8px;">
+          ඔබ අද ලබාදෙනු ලබන සුළු දායකත්වය හෙට ශ්‍රීලංකාවේ අනගතය වෙනුවෙන් කරනු ලබන මහගු මෙහෙවරකි.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2025 Rata Saviya Foundation — Supporting Sri Lanka’s Future<br />
+  <span lang="si">
+    ශ්‍රී ලංකාවේ අනාගතය වූ පාසල් දරු දරුවන් හට සවියක් වීම සදහා රට විරුවන් වෙතින් ගොඩනැගුන පදනමකි
+  </span>
+</footer>
+
+<script>
+  function renderFbPage() {
+    const container = document.getElementById('fb-container');
+    container.innerHTML = ''; // clear previous content
+
+    // Calculate width - fallback minimum width 280px
+    let width = container.offsetWidth;
+    if (width < 280) width = 280;
+
+    // Create Facebook page div
+    const fbPage = document.createElement('div');
+    fbPage.className = 'fb-page';
+    fbPage.setAttribute('data-href', 'https://www.facebook.com/profile.php?id=61576856349713');
+    fbPage.setAttribute('data-tabs', 'timeline');
+    fbPage.setAttribute('data-width', width);
+    fbPage.setAttribute('data-height', '500');
+    fbPage.setAttribute('data-small-header', 'false');
+    fbPage.setAttribute('data-adapt-container-width', 'true');
+    fbPage.setAttribute('data-hide-cover', 'false');
+    fbPage.setAttribute('data-show-facepile', 'true');
+
+    container.appendChild(fbPage);
+
+    // Parse XFBML for the new element
+    if (typeof FB !== 'undefined') {
+      FB.XFBML.parse(container);
+    }
+  }
+
+  window.addEventListener('load', renderFbPage);
+  window.addEventListener('resize', () => {
+    clearTimeout(window.fbResizeTimeout);
+    window.fbResizeTimeout = setTimeout(renderFbPage, 300);
+  });
+</script>
+
+</body>
+</html>
